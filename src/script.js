@@ -6,7 +6,7 @@ const getExtensionUrl = (hostPermissions = []) => {
     return host.replace('*', '');
 }
 
-const getIcon = (icons = [], eUrl) => {
+const getIcon = (icons = []) => {
     const { url = '' } = icons.pop() || {};
     if (url != '') {
         return `${url}`;
@@ -30,7 +30,7 @@ const createTile = ({
     const contentDiv = createNode({ type: 'div', className: 'contentDiv' })
     mainDiv.appendChild(imageDiv)
     mainDiv.appendChild(contentDiv)
-    const imageUrl = getIcon(icons, extensionUrl);
+    const imageUrl = getIcon(icons);
     imageDiv.appendChild(createNode({ type: 'img', src: imageUrl }));
     const heading = createNode({ type: 'p', textContent: name });
     contentDiv.appendChild(heading);
