@@ -9,7 +9,7 @@ const getExtensionUrl = (hostPermissions = []) => {
 const getIcon = (icons = [], eUrl) => {
     const { url = '' } = icons.pop() || {};
     if (url != '') {
-        return `${eUrl}${url}`;
+        return `${url}`;
     } else {
         return runtime.getURL('permissions/developer.svg')
     }
